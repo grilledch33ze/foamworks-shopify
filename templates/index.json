@@ -1,0 +1,50 @@
+{
+    "sections": {
+
+        "hero_section": {
+            "type": "hero-section",
+            //"disabled": <Section Disabled> - a boolean type of which we dont want the section showing up here//
+            "settings": {
+                "title" : "Premium Quality,Delivered Fast",
+                "cta" : /*Button*/ "Shop Products Now"
+                
+            }
+        },
+
+        //TO DO: ADD THE REST OF THE MAIN PAGE SECTIONS AND FINSIH THE COLLECTION SECTION
+
+        "features-section": {
+            "type": "featured-section",
+            "settings": {
+                "title": "Featured Products"
+            },
+            "blocks": {
+                "bestsellers_section": {
+                    "type": "bestsellers-section",
+                    "settings": {
+                        "Our Bestellers": "bestsellers product cards",
+                    }
+                },
+                "our_collections_section": {
+                    "type": "collections-section",
+                    "blocks": {
+                        "collection_moulds": {
+                            "type": "collection",
+                            "settings": {
+                                "collection": "moulds"
+                            }
+                        },
+                        "collection_capitals": {
+                            "type": "collection",
+                            "settings":{
+                                "collection": "capitals"
+                            }
+                        }
+                    }
+                }
+            }
+
+
+        }
+    }
+}
