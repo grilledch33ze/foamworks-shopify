@@ -1,0 +1,17 @@
+<header>
+
+    <div class=logo-content>
+    </div>
+
+    <div class=navigation-container>
+        {% for link in section.settings.menu.links %}
+            {{ link.title | link_to: link.url }}
+        {% endfor %}    
+    </div>
+
+    <div class=icons-container>
+        <div class="shopping-cart"></div>
+    </div>
+
+
+</header>
