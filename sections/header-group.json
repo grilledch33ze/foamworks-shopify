@@ -1,0 +1,12 @@
+{
+    "type": "header",
+    "name": "header-group",
+    "sections": {
+        "header": {
+            "type": "header",
+            //idk what settings to do for my header
+            "settings": {}
+        }
+    },
+    "order": ["header"]
+}
