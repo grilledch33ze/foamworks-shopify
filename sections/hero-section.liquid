@@ -1,0 +1,52 @@
+<div class="hero-container">
+
+    <div class="heading-text">
+        <h1 class="hero-heading">
+            {{ section.settings.heading }}
+        </h1>
+    </div>
+
+    <div class="cta">
+       {% render 'buttons', text:  section.settings.button_text , type: 'link',  section.settings.button_link  %}
+    </div>
+
+</div>
+
+
+{% schema %}
+
+{
+    "name": "Hero Section",
+    "settings": [
+        {
+        "type": "image_picker",
+        "id": "hero_image",
+        "label": "Hero Background Image"
+    },
+    {
+    "type": "text",
+    "id": "heading",
+    "label": "Heading",
+    "default": "Premium Quality, Delivered Fast"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Shop Products Now"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link",
+      "default": "/collections/all"
+    }
+    ],
+    "presets": [
+    {
+      "name": "Hero"
+    }
+  ]
+}
+   
+{% endschema %}

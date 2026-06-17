@@ -1,0 +1,29 @@
+{% comment %}
+  Renders the different types of re-usable buttons
+
+  Accepts:
+  -text: (String) The label of the button
+  -url: (String) The destination URL (required if it is a link).
+  -type: (String) The type of button ('link' or 'submit')
+  - classes: (String) Optional extra CSS classes for styling.
+
+  Usage:
+  {% render 'button', text: 'Add to Cart', type: 'submit' %}
+{% endcomment %}
+
+{% if type == 'submit' %}
+    {% form 'product' , product %}
+        <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+
+        <button type="submit" class="btn--add-to-cart">
+            {{ text }}
+        </button>
+    {% endform %} 
+
+{% elsif type == 'link' %}
+
+    <a href="{{ url }}" class="btn--shop-products">
+        {{ text }}
+    </a>
+
+{% endif %}
