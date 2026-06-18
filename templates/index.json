@@ -10,36 +10,25 @@
             }
         },
 
-        "features-section": {
-            "type": "featured-section",
+        "features_section": {
+            "type": "features-section",
             "settings": {
-                "title": "Featured Products"}
-            },
-            "bestsellers_section": {
-                "type": "bestsellers-section",
-                "settings": {
-                    "Our Bestellers": "bestsellers product cards",
+                "title": "Featured Products"},
+                "blocks":{
+                    "bestsellers_block":{
+                        "type": "bestsellers-section",
+                        "settings":{}
+                    },
+                    "collections_block": {
+                        "type": "collections-section",
+                        "settings":{}
                     }
-            },
-            "our_collections_section": {
-                "type": "collections-section",
-                "blocks": {
-                    "collection_moulds": {
-                        "type": "collection",
-                        "settings": {
-                        "collection": "moulds"
-                            }
-                        },
-                        "collection_capitals": {
-                            "type": "collection",
-                            "settings":{
-                            "collection": "capitals"
-                        }
-                    }
-                }
+                },"block_order": [
+                        "bestsellers_block","collections_block"
+                    ]
             }
         },    
     "order": [
-        "hero_section"
+        "hero_section","features_section"
     ]
 }

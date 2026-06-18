@@ -1,0 +1,38 @@
+{% comment %}
+  Renders the product card
+
+  Accepts:
+  - product: {Object} Product Liquid object
+  - placeholder_image: {String} Placeholder image when no product image exists. Default: 'product-1' (optional)
+
+  Usage:
+  {% render 'product-card', product: product %}
+{% endcomment %}
+
+<div class="product-card">
+    <a href="{{ product.url }}" class="product-card-link">
+        <div class="product-card-image">
+            {% if product.featured_image %}
+                <img
+                    src="{{ product.featured_image | image_url: width: 600}}"
+                    alt="{{ product.title }}"
+                    loading="lazy"
+                    width="{{ product.featured_image.width }}"
+                    height="{{ product.featured_image.height }}"
+                >
+                {% else %}
+                    {{ placeholder_image }}
+                {% endif %}
+        </div>
+
+        <div class="product-card-info">
+            <h3 class="product-card-title">{{ product.title }}</h3>
+            <p class="product-card__type">{{ product.type }}</p>
+            <p class="product-card__price">{{ product.price | money }}</p>
+        </div>
+    </a>
+
+    {% render 'buttons', text: 'Add to Cart', type: 'submit', product: product %}
+
+</div>
+
