@@ -1,0 +1,60 @@
+<div class="contactform-section">
+
+    <div class="header-subheader-contactform-section">
+        <h3 class="GIT">{{ section.settings.heading }}</h3>
+        <h3 class="SubH">{{ section.settings.subheading }}</h3>
+    </div>
+
+    
+      
+        <div class="details">
+
+            {% form 'contact' %}
+            <label>
+                Enter Your Name
+                <input type="text" name="name" id="name" required>
+            </label>
+
+            <label>
+                Enter Your Email
+                <input type="email" name="email" id="email" required>
+            </label>
+
+            <label>
+                Enter Your Email
+                <input type="tel" name="phone" id="phone" required placeholder="+61 491 570 156">
+            </label>
+
+            <label>
+                How Can We Help
+                <input type="text" name="help" id="help">
+            </label>
+
+            {% render 'buttons', text: 'Send Message', type: 'submit' %}
+            {% endform %}
+            
+        </div>
+</div>
+
+{% schema %}
+
+{
+    "name": "Contact Form",
+    "settings": [
+        {
+            "type": "text",
+            "id": "heading",
+            "label": "Heading",
+            "default": "Get In Touch"
+            
+        },
+        {
+            "type": "text",
+            "id": "subheading",
+            "label": "SubHeading",
+            "default": "Get product details our team will respond soon."
+        }
+    ]
+}
+
+{% endschema %}

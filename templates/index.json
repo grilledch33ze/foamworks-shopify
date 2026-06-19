@@ -26,7 +26,12 @@
                 },"block_order": [
                         "bestsellers_block","collections_block"
                     ]
-            }
+            },
+        
+        "contactform_section": {
+            "type": "contactform-section",
+            "settings": {}
+        }
         },    
     "order": [
         "hero_section","features_section"
