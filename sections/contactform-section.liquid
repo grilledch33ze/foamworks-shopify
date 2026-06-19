@@ -29,7 +29,10 @@
             <label for="ContactFormMessage">How Can We Help</label>
             <textarea name="contact[body]" id="ContactFormMessage" rows="4"></textarea>
 
-            {% render 'buttons', text: 'Send Message', type: 'submit' %}
+            {% form 'contact' %}
+                {% render 'buttons', text: 'Send Message', type: 'submit' %}
+            {% endform %}
+            
             {% endform %}
             
         </div>
