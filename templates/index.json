@@ -34,6 +34,6 @@
         }
         },    
     "order": [
-        "hero_section","features_section"
+        "hero_section","features_section","contactform_section"
     ]
 }
