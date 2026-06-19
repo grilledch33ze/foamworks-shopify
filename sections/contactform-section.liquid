@@ -10,25 +10,24 @@
         <div class="details">
 
             {% form 'contact' %}
-            <label>
-                Enter Your Name
-                <input type="text" name="name" id="name" required>
-            </label>
 
-            <label>
-                Enter Your Email
-                <input type="email" name="email" id="email" required>
-            </label>
+            {% if form.posted_successfully? %}
+                <p class="form-success">Thanks for contacting us! We will get back to you soon.</p>
+            {% endif %}
 
-            <label>
-                Enter Your Email
-                <input type="tel" name="phone" id="phone" required placeholder="+61 491 570 156">
-            </label>
+            {{ form.errors | default_errors }}
 
-            <label>
-                How Can We Help
-                <input type="text" name="help" id="help">
-            </label>
+            <label for="ContactFormName">Enter Your Name</label>
+            <input type="text" name="contact[name]" id="ContactFormName" required>
+
+            <label for="ContactFormEmail">Enter Your Email</label>
+            <input type="text" name="contact[email]" id="ContactFormEmail" required>
+
+            <label for="ContactFormPhone">Enter Your Phone Number</label>
+            <input type="tel" name="contact[phone]" id="ContactFormPhone" required>
+
+            <label for="ContactFormMessage">How Can We Help</label>
+            <textarea name="contact[body]" id="ContactFormMessage" rows="4"></textarea>
 
             {% render 'buttons', text: 'Send Message', type: 'submit' %}
             {% endform %}
@@ -53,6 +52,11 @@
             "id": "subheading",
             "label": "SubHeading",
             "default": "Get product details our team will respond soon."
+        }
+    ],
+    "presets": [
+        {
+            "name": "Contact Form Section"
         }
     ]
 }
