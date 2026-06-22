@@ -1,0 +1,11 @@
+{
+    "sections": {
+        "products_listing_page_section": {
+            "type": "products-listing-page-section",
+            "settings": {}
+        }
+    },
+    "order": [
+        "products_listing_page_section"
+    ]
+}

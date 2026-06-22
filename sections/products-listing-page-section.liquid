@@ -1,0 +1,103 @@
+<div class="plp-section">
+
+    <div class="plp-header-section">
+        <p class="plpibreadcrumb">
+            <a href="/">Home</a> &gt; {{ collection.title }}
+        </p>
+        
+        <h2 class="plp-header">PRODUCTS</h2>
+    </div>
+
+    <div class="plp-layout">
+        <aside class="plp-sidebar">
+            <div class="plp-sidebar-inner">
+
+                 <h3 class="plp-sidebar-heading">Filters</h3>
+
+                 <div class="plp-sidebar-search">
+                    <input 
+                        class="plp-search-input"
+                        type="text"
+                        placeholder="Search"
+                        id="plp-search"
+                    >
+                </div>
+
+                <div class="plp-sidebar-sections">
+                    <div class="category-part">
+                        <ul>
+                            {% for collection_item in collections %}
+                                <input type="checkbox" id="category-items" name="Category">
+                            {% endfor %}
+                        </ul>
+                    </div>
+
+                    <div class="pricing-part"></div>
+
+                    <div class="branding-part"></div>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <div class="plp-content">
+
+        <div class="plp-toolbar">
+            <div class="plp-sort">
+                <select class="plp-sort__select" onchange="window.location.href=this.value">
+                    <option value="{{ collection.url }}?sort_by=manual">Featured</option>
+                    <option value="{{ collection.url }}?sort_by=best-selling">Best Selling</option>
+                    <option value="{{ collection.url }}?sort_by=price-ascending">Price, Low to High</option>
+                    <option value="{{ collection.url }}?sort_by=price-descending">Price, High to Low</option>
+                    <option value="{{ collection.url }}?sort_by=created-ascending">Date, Old to New</option>
+                    <option value="{{ collection.url }}?sort_by=created-descending">Date, New to Old</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    {% paginate collection.products by 9 %}
+        <div class="plp-grid">
+            {% for product in collection.products %}
+                {% render 'product-card', product: product %}
+            {% endfor %}
+        </div>
+
+        {% if paginate.pages > 1 %}
+            <div class="plp-pagination">
+                {%- if paginate.previous -%}
+                    <a href="{{ paginate.previous.url }}" class="plp-page-btn">← Previous</a>
+                {%- endif -%}
+
+                {% for part in paginate.parts %}
+                    {% if part.is_link %}
+                      <a href="{{ part.url }}" class="plp-page-btn">{{ part.title }}</a>
+                    {% else %}
+                        <span class="plp-page-btn plp-page-btn--active">{{ part.title }}</span>
+                    {% endif %}    
+                {% endfor %}
+
+                {%- if paginate.next -%}
+                    <a href="{{ paginate.next.url }}" class="plp-page-btn">Next →</a>
+                {%- endif -%}
+
+            </div>
+        {% endif %}
+    {% endpaginate %}
+
+
+</div>
+
+{% schema %}
+
+{
+    "name": "PLP Section",
+    "settings": [],
+    "presets": [
+        {
+            "name": "PLP Section"
+        }
+    ]
+}
+
+{% endschema %}
