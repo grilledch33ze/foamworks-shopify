@@ -1,0 +1,8 @@
+{
+    "sections":{
+        "cart_items": {
+            "type": "cart-items",
+            "settings": {}
+        }
+    }
+}

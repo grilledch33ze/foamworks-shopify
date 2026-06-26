@@ -20,8 +20,55 @@
                 </select>
             </div>
 
-            <div class="pdp-"></div>
+            <div class="pdp-material">
+                <label for="material">Material</label>
+                <select id="material name=material size=2" multiple>
+                    <option value="idk1">IDK1</option>
+                    <option value=idk2>IDK2</option>
+                </select>
+            </div>
+
+            <div class="pdp-quantity">
+                <button type="button" class="pdp-qty-btn-minus">-</button>
+                <input type="number" class="pdp-qty-inp" name="quantity" value="1" min="1">
+                <button type="button" class="pdp-qty-btn-plus">+</button>
+            </div>
+
+            <div class="pdp-addtocart-btn">
+                {% form 'button' %}
+                  {% render 'buttons', text: 'Add to Cart', type: 'submit' %}
+                {% endform %}
+            </div>
         </div>
+
+        <div class="pdp-key-features">
+            <h2 class="key-features-title">Key Features</h2>
+
+            <div class="key-features-grid">
+                {{ product.metafields.custom.features }}
+            </div>
+        </div>
+
+        <div class="pdp-specs">
+            <h2 class="pdp-specs-title">Specifications</h2>
+
+            <div class="pdp__specs-table">
+                {{ product.metafields.custom.specifications }}
+            </div>
+
+            {% comment %}
+             CONSIDER PUTTTING A COMMENT SECTION HERE, REALLY DEPENDING ON FOAMWORKS REVIEWS
+              <div class="pdp-specs-customer-reviews">
+                <h3 class="pdp-specs-reviews-title">Customer reviews</h3>
+            </div>
+            {% endcomment %}
+        </div>
+
+        
+          <div class="you-may-also-like">
+            {% section 'product-recommendations' %}
+          </div>
+       
 
     </div>
 </div>

@@ -1,0 +1,29 @@
+{% comment %}
+  Renders a dynamic 'You May Also Like' product recommendations section.
+  Uses Shopify's native Recommendations API to fetch contextually relevant items.
+
+  Dependencies:
+  - snippets/product-card.liquid (Used to render individual item cards)
+
+  Data Scope Requirements:
+  - Must live inside a context where the 'product' object is globally accessible 
+    (e.g., templates/product.json or sections/main-product.liquid).
+
+  Usage:
+  {% section 'product-recommendations' %}
+{% endcomment %}
+
+<div class="recommendations" data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit=4">
+
+    {% if recommendations.performed and recommendations.products_count > 0 %}
+
+        <h2 class="recommendations-heading">You May Also Like</h2>
+
+        <div class="recommendations-grid">
+            {% for recommendation in recommendations.products %}
+                {% render 'product-card', product: recommendation %}
+            {% endfor %}
+        </div>
+
+    {% endif %}
+</div>
