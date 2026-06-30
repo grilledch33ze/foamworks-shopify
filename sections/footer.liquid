@@ -1,0 +1,100 @@
+<footer class="footer">
+
+    <div class="footer-main">
+        {% if section.settings.logo != blank %}
+          <img
+            src="{{ section.settings.logo }}"
+            alt="{{ shop.name }}"
+            class="footor-logo"
+            width="120"
+            loading="lazy">
+        {% else %}
+            <span class="footer-class-name">{{ shop.name }}</span>
+        {% endif %}
+            
+    </div>
+
+    <div class="footer-links">
+
+        <div class="footer-column1">
+            <p class="footer-heading">Products</p>
+
+            <ul class="footer-list">
+                {% for link in linklists[section.settings.products.menu].links %}
+                    <li><a href="{{ link.url }}" class="footer__link">{{ link.title }}</a></li>
+                {% endfor %}
+            </ul>
+
+        </div>
+
+        <div class="footer-column2">
+
+            <p class="footer-heading-2">Company</p>
+
+            <ul class="footer__list">
+                {%- for link in linklists[section.settings.company_menu].links -%}
+                    <li><a href="{{ link.url }}" class="footer__link">{{ link.title }}</a></li>
+                {%- endfor -%}
+            </ul>
+
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+        <div class="footer-tagline-block">
+            <p class="footer-tagline">{{ section.settings.tagline }}</p>
+
+            <p class="footer-tagline-sub">{{ section.settings.tagline_sub }}</p>
+
+        </div>
+
+        <p class="footer-copyright">© {{ 'now' | date: '%Y' }} {{ shop.name }}. All rights reserved.</p>
+    </div>
+
+</footer>
+
+{% schema %}
+
+{
+    "name": "Footer",
+    "settings": [
+        {
+            "type": "image_picker",
+            "id": "logo",
+            "label": "Logo"
+        },
+        {
+            "type": "text",
+            "id": "tagline",
+            "label": "Tagline",
+            "default": "Build Faster with Foamworks."
+        },
+        {
+            "type": "text",
+            "id": "tagline_sub",
+            "label": "Tagline subtitle",
+            "default": "Save weeks on lead times and install premium architectural accents that arrive on-site, ready to mount."
+        },
+        {
+            "type": "link_list",
+            "id": "products_menu",
+            "label": "Products menu",
+            "default": "main-menu"
+        },
+        {
+            "type": "link_list",
+            "id": "company_menu",
+            "label": "Company menu",
+            "default": "footer"
+        }
+    ],
+    "presets": [
+    {
+      "name": "Footer"
+    }
+  ]
+}
+
+{% endschema %}
