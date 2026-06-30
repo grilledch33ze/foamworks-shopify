@@ -1,6 +1,9 @@
-<header>
+<header class="header">
 
     <div class=logo-content>
+        <a href="/" class="header-logo-link">
+            {{ shop.name }}
+        </a>
     </div>
 
     <div class=navigation-container>
@@ -10,7 +13,15 @@
     </div>
 
     <div class=icons-container>
-        <div class="shopping-cart"></div>
+
+        <form action="{{ routes.search }}" method="get" class="search-bar">
+            <input type="text" name="search" placeholder="Search">
+            <button type="submit" class="search-bar-icon"></button>
+        </form>
+
+        <a href="{{ routes.cart_url }}" class="shopping-cart">
+            (<span class="cart-count">{{ cart.item_count }}</span>)
+        </a>
     </div>
 
 
