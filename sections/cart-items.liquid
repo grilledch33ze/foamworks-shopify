@@ -2,16 +2,78 @@
 
     <div class="cart-header">
         <p class="cart-breadcrumb">
-            <a href="/">Home</a> &gt; {{ collection.title }}
+            <a href="/">Home</a> &gt; Cart
         </p>
     </div>
 
-    <div class="cart-products">
-        <div class="cart-product-card"></div>
+    <form action="{{ routes.cart_url }}" method="post" id="cart">
+        
+        {% if cart.item_count > 0 %}
+            <div class="cart-products">
+                
+                <div class="cart-items-list">
+                    
+                    {% for item in cart.items %}
+                        <div class="cart-product-card" data-key="{{ item.key }}">
+                            
+                            <img src="{{ item.image | image_url: width: 200 }}" alt="{{ item.title }}" loading="lazy">
 
-        <div class="order-summary-card"></div>
+                            <h3 class="cart-product-header">{{ item.product.title }}</h3>
+
+                            <p class="cart-product-spec">Size: {{ item.product.metafields.custom.size.value }}</p>
+
+                            {% unless item.product.has_only_default_variant %}
+                                <p class="cart-product-variant">{{ item.variant.title }}</p>
+                            {% endunless %}
+
+                            <p>{{ item.final_price | money }}</p>
+
+                            <div class="cart-product-card-main-qty">
+                                <button type="button" class="product-card-cart-qty">-</button>
+                                <input type="number" class="product-card-cart-qty-inp" name="updates[]" value="{{ item.quantity }}" min="0" id="updates_{{ item.key }}">
+                                <button type="button" class="product-card-cart-qty-plus">+</button>
+                            </div>
+
+                        </div>
+                    {% endfor %}
+                </div>
+
+                <div class="order-summary-card">
+                    <div class="order-summary-card-header">
+                        <p>Order Summary</p>
+                    </div>
+
+                    <div class="order-summary-card-details">
+                        <p>Cart Subtotal: <strong>{{ cart.total_price | money }}</strong></p>
+                        <p>Shipping & Taxes: Calculated at checkout</p>
+                    </div>
+
+                    <div class="check-out-button">
+                        <button type="submit" name="checkout" class="check-out-button-element">
+                            Check Out
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        {% else %}
+            <div class="cart-empty">
+                <p>Your cart is currently empty.</p>
+                <a href="{{ routes.all_products_collection_url }}" class="btn">Continue Shopping</a>
+            </div>
+        {% endif %}
+
+    </form>
+
+    <div class="you-may-also-like">
+        {% section 'product-recommendations' %}
     </div>
 
-    <div class="you-may-also-like"></div>
-
 </div>
+
+{% schema %}
+{
+    "name": "Cart ",
+    "settings": []
+}
+{% endschema %}

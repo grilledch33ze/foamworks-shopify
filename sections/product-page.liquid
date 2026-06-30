@@ -3,16 +3,45 @@
     <div class="pdp-main">
 
         <div class="pdp-image">
-            <img>
+            {% if product.featured_image != blank %}
+                <img src="{{ product.featured_image | image_url: width: 600 }}" alt="{{ product.title }}" loading="eager">
+            {% else %}
+                {{ 'product-1' | placeholder_svg_tag }}
+            {% endif %}
         </div>
 
         <div class="pdp-details">
             <h1 class="pdp-header">{{ product.title }}</h1>
             <h3 class="pdp-sub-header">{{ product.description }}</h3>
 
-            <p class="pdp-price">{{ product|money }}</p>
+            <p class="pdp-price">{{ product.price|money }}</p>
 
-            <div class="pdp-size">
+            {% unless  product.has_only_default_variant %}
+
+                <div class="pdp-variants">
+                    {% for option in product.options_with_values %}
+                      <div class="pdp-option-group">
+
+                        <label for="Option-{{ section.id }}-{{ forloop.index0 }}">{{ option.name }}</label>
+
+                        <select id="Option-{{ section.id }}-{{ forloop.index0 }}">
+                            {% for value in option.values %}
+                                <option value="{{ value | escape }}" {% if option.selected_value == value %}selected{% endif %}>
+                                    {{ value }}
+                                </option>
+                            {% endfor %}
+                        </select>
+
+                      </div>
+                    {% endfor %}
+                </div>
+              
+            {% endunless %}
+
+            {% comment %}
+             OG CODE BECAUSE LOWKEY NOT GETTING THE VARIANT CODE YET
+
+              <div class="pdp-size">
                 <label for="size">Size</label>
                 <select id="size" name="size" size="2" multiple>
                     <option value="large">Large</option>
@@ -27,6 +56,7 @@
                     <option value=idk2>IDK2</option>
                 </select>
             </div>
+            {% endcomment %}
 
             <div class="pdp-quantity">
                 <button type="button" class="pdp-qty-btn-minus">-</button>
@@ -45,7 +75,7 @@
             <h2 class="key-features-title">Key Features</h2>
 
             <div class="key-features-grid">
-                {{ product.metafields.custom.features }}
+                {{ product.metafields.custom.features | metafield_tag }}
             </div>
         </div>
 
@@ -53,15 +83,9 @@
             <h2 class="pdp-specs-title">Specifications</h2>
 
             <div class="pdp__specs-table">
-                {{ product.metafields.custom.specifications }}
+                {{ product.metafields.custom.specifications | metafield_tag}}
             </div>
 
-            {% comment %}
-             CONSIDER PUTTTING A COMMENT SECTION HERE, REALLY DEPENDING ON FOAMWORKS REVIEWS
-              <div class="pdp-specs-customer-reviews">
-                <h3 class="pdp-specs-reviews-title">Customer reviews</h3>
-            </div>
-            {% endcomment %}
         </div>
 
         
@@ -72,3 +96,15 @@
 
     </div>
 </div>
+
+{% schema %}
+{
+    "name": "Product Page",
+    "settings": [],
+    "presets": [
+        {
+            "name": "Product Page"
+        }
+    ]
+}
+{% endschema %}
