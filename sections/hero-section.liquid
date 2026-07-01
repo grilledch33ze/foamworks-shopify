@@ -7,7 +7,10 @@
     </div>
 
     <div class="cta">
-       {% render 'buttons', text:  section.settings.button_text , type: 'link',  section.settings.button_link  %}
+       {% render 'buttons', 
+        text:  section.settings.button_text , 
+        type: 'link',  
+        url: section.settings.button_link  %}
     </div>
 
 </div>

@@ -4,5 +4,8 @@
             "type": "cart-items",
             "settings": {}
         }
-    }
+    },
+    "order": [
+        "cart_items"
+    ]
 }
