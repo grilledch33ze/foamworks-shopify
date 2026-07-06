@@ -7,6 +7,17 @@
         <title>{{ page_title }}</title>
 
         {{ content_for_header }}
+
+        {{ 'base.css' | asset_url | stylesheet_tag }}
+        {{ 'theme.css' | asset_url | stylesheet_tag }}
+
+        {% style %}
+        :root {
+            --page-width: {{ settings.page_width }}px;
+            --section-spacing: {{ settings.spacing_sections }}px;
+            }
+        {% endstyle %}
+        
     </head>
 
     <body>

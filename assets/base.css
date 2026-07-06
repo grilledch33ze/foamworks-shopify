@@ -1,0 +1,219 @@
+/* ============================================
+   FOAMWORKS THEME — BASE TOKEN SYSTEM
+   All values derived from Figma design file
+   Never hardcode values in components —
+   always reference a token via var()
+   ============================================ */
+
+
+/* ============================================
+   COLORS
+   ============================================ */
+:root {
+  /* Primary — CTA, buttons, price amounts */
+  --color-primary:          #175CD3;
+
+  /* Primary Dark — Add to cart buttons */
+  --color-primary-dark:     #1849A9;
+
+  /* Text — Headings, subheadings, card titles */
+  --color-text-dark:        #101828;
+
+  /* Text — Product card type/label */
+  --color-text-muted:       #535862;
+
+  /* Text — Hero header text */
+  --color-text-inverse:     #FFFFFF;
+
+  /* Background — default page background */
+  --color-background:       #FFFFFF;
+}
+
+
+/* ============================================
+   TYPOGRAPHY — FONT FAMILY
+   ============================================ */
+:root {
+  --font-heading: 'Inter', sans-serif;
+  --font-body:    'Inter', sans-serif;
+}
+
+
+/* ============================================
+   TYPOGRAPHY — DISPLAY SCALE
+   Format: font-size / line-height
+   Each scale has: regular, medium, semi-bold, bold
+   ============================================ */
+:root {
+
+  /* Display 2XL — 72px / 90px */
+  --font-size-display-2xl:       72px;
+  --line-height-display-2xl:     90px;
+  --font-weight-regular:         400;
+  --font-weight-medium:          520;
+  --font-weight-semibold:        600;
+  --font-weight-bold:            700;
+
+  /* Display XL — 60px / 72px */
+  --font-size-display-xl:        60px;
+  --line-height-display-xl:      72px;
+
+  /* Display L — 48px / 60px */
+  --font-size-display-l:         48px;
+  --line-height-display-l:       60px;
+
+  /* Display M — 36px / 44px */
+  --font-size-display-m:         36px;
+  --line-height-display-m:       44px;
+
+  /* Display S — 30px / 38px */
+  --font-size-display-s:         30px;
+  --line-height-display-s:       38px;
+
+  /* Display XS — 24px / 32px */
+  --font-size-display-xs:        24px;
+  --line-height-display-xs:      32px;
+
+  /* Text XL — 60px / 72px */
+  --font-size-text-xl:           60px;
+  --line-height-text-xl:         72px;
+
+  /* Text L — 18px / 28px */
+  --font-size-text-l:            18px;
+  --line-height-text-l:          28px;
+
+  /* Text M — 16px / 24px */
+  --font-size-text-m:            16px;
+  --line-height-text-m:          24px;
+
+  /* Text S — 14px / 20px */
+  --font-size-text-s:            14px;
+  --line-height-text-s:          20px;
+}
+
+
+/* ============================================
+   SPACING SCALE — base 4
+   ============================================ */
+:root {
+  --space-1:   4px;
+  --space-2:   8px;
+  --space-3:   12px;
+  --space-4:   16px;
+  --space-5:   20px;
+  --space-6:   24px;
+  --space-8:   32px;
+  --space-10:  40px;
+  --space-12:  48px;
+  --space-16:  64px;
+  --space-20:  80px;
+  --space-24:  96px;
+  --space-32:  128px;
+}
+
+
+/* ============================================
+   BORDER RADIUS SCALE — base 4
+   ============================================ */
+:root {
+  --radius-sm:   4px;
+  --radius-md:   8px;
+  --radius-lg:   12px;
+  --radius-xl:   16px;
+  --radius-2xl:  24px;
+  --radius-full: 9999px;
+}
+
+
+/* ============================================
+   SEMANTIC ALIASES
+   Map tokens to their purpose so components
+   stay meaningful and easy to read
+   ============================================ */
+:root {
+  /* Buttons */
+  --btn-primary-bg:          var(--color-primary);
+  --btn-primary-bg-hover:    var(--color-primary-dark);
+  --btn-primary-text:        var(--color-text-inverse);
+
+  --btn-cart-bg:             var(--color-primary-dark);
+  --btn-cart-text:           var(--color-text-inverse);
+
+  /* Product Cards */
+  --card-title-color:        var(--color-text-dark);
+  --card-type-color:         var(--color-text-muted);
+  --card-price-color:        var(--color-primary);
+
+  /* Hero */
+  --hero-heading-color:      var(--color-text-inverse);
+
+  /* Headings and Subheadings */
+  --heading-color:           var(--color-text-dark);
+  --subheading-color:        var(--color-text-dark);
+}
+
+
+/* ============================================
+   TYPOGRAPHY UTILITY CLASSES
+   Use these directly in your Liquid/HTML
+   ============================================ */
+
+/* Display 2XL */
+.text-display-2xl-regular   { font-family: var(--font-heading); font-size: var(--font-size-display-2xl); line-height: var(--line-height-display-2xl); font-weight: var(--font-weight-regular); }
+.text-display-2xl-medium    { font-family: var(--font-heading); font-size: var(--font-size-display-2xl); line-height: var(--line-height-display-2xl); font-weight: var(--font-weight-medium); }
+.text-display-2xl-semibold  { font-family: var(--font-heading); font-size: var(--font-size-display-2xl); line-height: var(--line-height-display-2xl); font-weight: var(--font-weight-semibold); }
+.text-display-2xl-bold      { font-family: var(--font-heading); font-size: var(--font-size-display-2xl); line-height: var(--line-height-display-2xl); font-weight: var(--font-weight-bold); }
+
+/* Display XL */
+.text-display-xl-regular    { font-family: var(--font-heading); font-size: var(--font-size-display-xl); line-height: var(--line-height-display-xl); font-weight: var(--font-weight-regular); }
+.text-display-xl-medium     { font-family: var(--font-heading); font-size: var(--font-size-display-xl); line-height: var(--line-height-display-xl); font-weight: var(--font-weight-medium); }
+.text-display-xl-semibold   { font-family: var(--font-heading); font-size: var(--font-size-display-xl); line-height: var(--line-height-display-xl); font-weight: var(--font-weight-semibold); }
+.text-display-xl-bold       { font-family: var(--font-heading); font-size: var(--font-size-display-xl); line-height: var(--line-height-display-xl); font-weight: var(--font-weight-bold); }
+
+/* Display L */
+.text-display-l-regular     { font-family: var(--font-heading); font-size: var(--font-size-display-l); line-height: var(--line-height-display-l); font-weight: var(--font-weight-regular); }
+.text-display-l-medium      { font-family: var(--font-heading); font-size: var(--font-size-display-l); line-height: var(--line-height-display-l); font-weight: var(--font-weight-medium); }
+.text-display-l-semibold    { font-family: var(--font-heading); font-size: var(--font-size-display-l); line-height: var(--line-height-display-l); font-weight: var(--font-weight-semibold); }
+.text-display-l-bold        { font-family: var(--font-heading); font-size: var(--font-size-display-l); line-height: var(--line-height-display-l); font-weight: var(--font-weight-bold); }
+
+/* Display M */
+.text-display-m-regular     { font-family: var(--font-heading); font-size: var(--font-size-display-m); line-height: var(--line-height-display-m); font-weight: var(--font-weight-regular); }
+.text-display-m-medium      { font-family: var(--font-heading); font-size: var(--font-size-display-m); line-height: var(--line-height-display-m); font-weight: var(--font-weight-medium); }
+.text-display-m-semibold    { font-family: var(--font-heading); font-size: var(--font-size-display-m); line-height: var(--line-height-display-m); font-weight: var(--font-weight-semibold); }
+.text-display-m-bold        { font-family: var(--font-heading); font-size: var(--font-size-display-m); line-height: var(--line-height-display-m); font-weight: var(--font-weight-bold); }
+
+/* Display S */
+.text-display-s-regular     { font-family: var(--font-heading); font-size: var(--font-size-display-s); line-height: var(--line-height-display-s); font-weight: var(--font-weight-regular); }
+.text-display-s-medium      { font-family: var(--font-heading); font-size: var(--font-size-display-s); line-height: var(--line-height-display-s); font-weight: var(--font-weight-medium); }
+.text-display-s-semibold    { font-family: var(--font-heading); font-size: var(--font-size-display-s); line-height: var(--line-height-display-s); font-weight: var(--font-weight-semibold); }
+.text-display-s-bold        { font-family: var(--font-heading); font-size: var(--font-size-display-s); line-height: var(--line-height-display-s); font-weight: var(--font-weight-bold); }
+
+/* Display XS */
+.text-display-xs-regular    { font-family: var(--font-heading); font-size: var(--font-size-display-xs); line-height: var(--line-height-display-xs); font-weight: var(--font-weight-regular); }
+.text-display-xs-medium     { font-family: var(--font-heading); font-size: var(--font-size-display-xs); line-height: var(--line-height-display-xs); font-weight: var(--font-weight-medium); }
+.text-display-xs-semibold   { font-family: var(--font-heading); font-size: var(--font-size-display-xs); line-height: var(--line-height-display-xs); font-weight: var(--font-weight-semibold); }
+.text-display-xs-bold       { font-family: var(--font-heading); font-size: var(--font-size-display-xs); line-height: var(--line-height-display-xs); font-weight: var(--font-weight-bold); }
+
+/* Text XL */
+.text-xl-regular            { font-family: var(--font-body); font-size: var(--font-size-text-xl); line-height: var(--line-height-text-xl); font-weight: var(--font-weight-regular); }
+.text-xl-medium             { font-family: var(--font-body); font-size: var(--font-size-text-xl); line-height: var(--line-height-text-xl); font-weight: var(--font-weight-medium); }
+.text-xl-semibold           { font-family: var(--font-body); font-size: var(--font-size-text-xl); line-height: var(--line-height-text-xl); font-weight: var(--font-weight-semibold); }
+.text-xl-bold               { font-family: var(--font-body); font-size: var(--font-size-text-xl); line-height: var(--line-height-text-xl); font-weight: var(--font-weight-bold); }
+
+/* Text L */
+.text-l-regular             { font-family: var(--font-body); font-size: var(--font-size-text-l); line-height: var(--line-height-text-l); font-weight: var(--font-weight-regular); }
+.text-l-medium              { font-family: var(--font-body); font-size: var(--font-size-text-l); line-height: var(--line-height-text-l); font-weight: var(--font-weight-medium); }
+.text-l-semibold            { font-family: var(--font-body); font-size: var(--font-size-text-l); line-height: var(--line-height-text-l); font-weight: var(--font-weight-semibold); }
+.text-l-bold                { font-family: var(--font-body); font-size: var(--font-size-text-l); line-height: var(--line-height-text-l); font-weight: var(--font-weight-bold); }
+
+/* Text M */
+.text-m-regular             { font-family: var(--font-body); font-size: var(--font-size-text-m); line-height: var(--line-height-text-m); font-weight: var(--font-weight-regular); }
+.text-m-medium              { font-family: var(--font-body); font-size: var(--font-size-text-m); line-height: var(--line-height-text-m); font-weight: var(--font-weight-medium); }
+.text-m-semibold            { font-family: var(--font-body); font-size: var(--font-size-text-m); line-height: var(--line-height-text-m); font-weight: var(--font-weight-semibold); }
+.text-m-bold                { font-family: var(--font-body); font-size: var(--font-size-text-m); line-height: var(--line-height-text-m); font-weight: var(--font-weight-bold); }
+
+/* Text S */
+.text-s-regular             { font-family: var(--font-body); font-size: var(--font-size-text-s); line-height: var(--line-height-text-s); font-weight: var(--font-weight-regular); }
+.text-s-medium              { font-family: var(--font-body); font-size: var(--font-size-text-s); line-height: var(--line-height-text-s); font-weight: var(--font-weight-medium); }
+.text-s-semibold            { font-family: var(--font-body); font-size: var(--font-size-text-s); line-height: var(--line-height-text-s); font-weight: var(--font-weight-semibold); }
+.text-s-bold                { font-family: var(--font-body); font-size: var(--font-size-text-s); line-height: var(--line-height-text-s); font-weight: var(--font-weight-bold); }

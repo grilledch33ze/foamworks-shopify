@@ -2,7 +2,11 @@
 
     <div class=logo-content>
         <a href="/" class="header-logo-link">
-            {{ shop.name }}
+            {%- if settings.logo != blank -%}
+                {{ settings.logo | image_url: width: settings.logo_width | image_tag: width: settings.logo_width, alt: shop.name }}
+            {%- else -%}
+                {{ shop.name }}
+            {%- endif -%}
         </a>
     </div>
 

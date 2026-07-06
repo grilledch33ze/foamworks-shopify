@@ -1,4 +1,8 @@
-<div class="hero-container">
+<div class="hero-container"
+
+{% if section.settings.hero_image != blank %}
+    style="background-image: url({{ section.settings.hero_image | image_url: width: 1920 }});"
+{% endif %} >
 
     <div class="heading-text">
         <h1 class="hero-heading">
