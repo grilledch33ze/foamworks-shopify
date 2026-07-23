@@ -16,20 +16,25 @@
         {% endfor %}    
     </div>
 
-    <div class=icons-container>
+    <div class="icons-container">
+        
+        <form action="{{ routes.search_url }}" method="get" class="search-bar" role="search">
 
-        <form action="{{ routes.search }}" method="get" class="search-bar" role="search">
-            <input type="text" name="search" placeholder="Search">
-            <button type="submit" class="search-bar-icon">
+            <button type="submit" class="search-bar-icon" aria-label="Search">
                 {{ 'search-icon.svg' | inline_asset_content }}
             </button>
+            
+            <input type="search" name="q" value="{{ search.terms | escape }}" placeholder="Search">
         </form>
-
-        <a href="{{ routes.cart_url }}" class="shopping-cart">
-            {{ 'icon-cart.svg' | inline_asset_content }}
+        
+       <a href="{{ routes.cart_url }}" class="shopping-cart" aria-label="Cart">
+        <img src="{{ 'cart-icon.svg' | asset_url }}" alt="" width="24" height="24">
+        {%- if cart.item_count > 0 -%}
             <span class="cart-count">{{ cart.item_count }}</span>
-        </a>
-    </div>
+        {%- endif -%}
+</a>
+
+</div>
 
 </header>
 
