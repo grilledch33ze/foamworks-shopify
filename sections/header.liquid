@@ -18,13 +18,16 @@
 
     <div class=icons-container>
 
-        <form action="{{ routes.search }}" method="get" class="search-bar">
+        <form action="{{ routes.search }}" method="get" class="search-bar" role="search">
             <input type="text" name="search" placeholder="Search">
-            <button type="submit" class="search-bar-icon"></button>
+            <button type="submit" class="search-bar-icon">
+                {{ 'search-icon.svg' | inline_asset_content }}
+            </button>
         </form>
 
         <a href="{{ routes.cart_url }}" class="shopping-cart">
-            (<span class="cart-count">{{ cart.item_count }}</span>)
+            {{ 'icon-cart.svg' | inline_asset_content }}
+            <span class="cart-count">{{ cart.item_count }}</span>
         </a>
     </div>
 

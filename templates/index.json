@@ -1,39 +1,93 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
-    "sections": {
-
-        "hero_section": {
-            "type": "hero-section",
-            "settings": {
-                "title" : "Premium Quality,Delivered Fast",
-                "cta" : "Shop Products Now"
-                
-            }
+  "sections": {
+    "hero_section": {
+      "type": "hero-section",
+      "settings": {
+        "hero_image": "shopify://shop_images/HeroImage.jpg",
+        "heading": "Premium Quality, Delivered Fast",
+        "button_text": "Shop Products Now",
+        "button_link": "shopify://collections/all"
+      }
+    },
+    "features_section": {
+      "type": "features-section",
+      "blocks": {
+        "collections_section_cAdrDk": {
+          "type": "collections-section",
+          "settings": {
+            "collection": "capitals",
+            "image": "shopify://shop_images/fomaworksimag3.jpg"
+          }
         },
-
-        "features_section": {
-            "type": "features-section",
-            "settings": {
-                "title": "Featured Products"},
-                "blocks":{
-                    "bestsellers_block":{
-                        "type": "bestsellers-section",
-                        "settings":{}
-                    },
-                    "collections_block": {
-                        "type": "collections-section",
-                        "settings":{}
-                    }
-                },"block_order": [
-                        "bestsellers_block","collections_block"
-                    ]
-            },
-        
-        "contactform_section": {
-            "type": "contactform-section",
-            "settings": {}
+        "collections_section_x9UJjw": {
+          "type": "collections-section",
+          "settings": {
+            "collection": "wall-plaques",
+            "image": "shopify://shop_images/foamworksimage4.jpg"
+          }
+        },
+        "collections_section_rHVhwH": {
+          "type": "collections-section",
+          "settings": {
+            "collection": "vents-grilles",
+            "image": "shopify://shop_images/Grilles.jpg"
+          }
+        },
+        "collections_section_BLGX3t": {
+          "type": "collections-section",
+          "settings": {
+            "collection": "moulds",
+            "image": "shopify://shop_images/foamworksimage.jpg"
+          }
+        },
+        "bestsellers_block": {
+          "type": "bestsellers-section",
+          "settings": {
+            "collection": "bestsellers"
+          }
+        },
+        "collections_block": {
+          "type": "collections-section",
+          "settings": {
+            "collection": "keystones-corbels",
+            "image": "shopify://shop_images/foamworksimage2.jpg"
+          }
         }
-        },    
-    "order": [
-        "hero_section","features_section","contactform_section"
-    ]
+      },
+      "block_order": [
+        "collections_section_cAdrDk",
+        "collections_section_x9UJjw",
+        "collections_section_rHVhwH",
+        "collections_section_BLGX3t",
+        "bestsellers_block",
+        "collections_block"
+      ],
+      "settings": {
+        "subheading": "Featured Products",
+        "heading": "Our Bestsellers",
+        "collections_heading": "Shop By Category"
+      }
+    },
+    "contactform_section": {
+      "type": "contactform-section",
+      "settings": {
+        "heading": "Get In Touch",
+        "subheading": "Get product details our team will respond soon."
+      }
+    }
+  },
+  "order": [
+    "hero_section",
+    "features_section",
+    "contactform_section"
+  ]
 }

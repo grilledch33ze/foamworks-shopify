@@ -27,8 +27,13 @@
                         <div class="collection-card-img">
                             {%- if block.settings.image != blank -%}
                                 {{ block.settings.image | image_url: width: 500 | image_tag: alt: block.settings.collection.title, loading: 'lazy' }}
-                            {%- else -%}
+
+                            {%- elsif block.settings.collection.featured_image != blank -%}
                                 {{ block.settings.collection.featured_image | image_url: width: 500 | image_tag: alt: block.settings.collection.title, loading: 'lazy' }}
+
+                            {%- else -%}
+                                {{ 'collection-1' | placeholder_svg_tag: 'placeholder-svg' }}
+                                
                             {%- endif -%}
                         </div>
                         <div class="collection-card-text">{{ block.settings.collection.title }}</div>
