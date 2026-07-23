@@ -1,101 +1,140 @@
 /* ============================================
-   FOAMWORKS THEME — BASE TOKEN SYSTEM
-   All values derived from Figma design file
-   Never hardcode values in components —
-   always reference a token via var()
+   FOAMWORKS THEME — BASE TOKENS
    ============================================ */
 
-
-/* ============================================
-   COLORS
-   ============================================ */
-:root {
-  /* Primary — CTA, buttons, price amounts */
-  --color-primary:          #175CD3;
-
-  /* Primary Dark — Add to cart buttons */
-  --color-primary-dark:     #1849A9;
-
-  /* Text — Headings, subheadings, card titles */
-  --color-text-dark:        #101828;
-
-  /* Text — Product card type/label */
-  --color-text-muted:       #535862;
-
-  /* Text — Hero header text */
-  --color-text-inverse:     #FFFFFF;
-
-  /* Background — default page background */
-  --color-background:       #FFFFFF;
-}
-
-
-/* ============================================
-   TYPOGRAPHY — FONT FAMILY
-   ============================================ */
-:root {
-  --font-heading: 'Inter', sans-serif;
-  --font-body:    'Inter', sans-serif;
-}
-
-
-/* ============================================
-   TYPOGRAPHY — DISPLAY SCALE
-   Format: font-size / line-height
-   Each scale has: regular, medium, semi-bold, bold
-   ============================================ */
 :root {
 
-  /* Display 2XL — 72px / 90px */
-  --font-size-display-2xl:       72px;
-  --line-height-display-2xl:     90px;
-  --font-weight-regular:         400;
-  --font-weight-medium:          520;
-  --font-weight-semibold:        600;
-  --font-weight-bold:            700;
+  /* ==========================================
+     RAW COLOR SCALE (from Figma)
+     ========================================== */
 
-  /* Display XL — 60px / 72px */
-  --font-size-display-xl:        60px;
-  --line-height-display-xl:      72px;
+  /* Blue */
+  --colours-blue-100: rgba(209, 233, 255, 1);
+  --colours-blue-200: rgba(178, 221, 255, 1);
+  --colours-blue-300: rgba(132, 202, 255, 1);
+  --colours-blue-400: rgba(83, 177, 253, 1);
+  --colours-blue-500: rgba(46, 144, 250, 1);
+  --colours-blue-600: rgba(21, 112, 239, 1);
+  --colours-blue-700: rgba(23, 92, 211, 1);    /* #175CD3 */
+  --colours-blue-800: rgba(24, 73, 169, 1);    /* #1849A9 */
+  --colours-blue-900: rgba(25, 65, 133, 1);
 
-  /* Display L — 48px / 60px */
-  --font-size-display-l:         48px;
-  --line-height-display-l:       60px;
+  /* Grey */
+  --colours-grey-100: rgba(245, 245, 245, 1);
+  --colours-grey-200: rgba(233, 234, 235, 1);
+  --colours-grey-300: rgba(213, 215, 218, 1);
+  --colours-grey-400: rgba(164, 167, 174, 1);
+  --colours-grey-500: rgba(113, 118, 128, 1);
+  --colours-grey-600: rgba(83, 88, 98, 1);     /* #535862 */
+  --colours-grey-700: rgba(65, 70, 81, 1);
+  --colours-grey-800: rgba(37, 43, 55, 1);
+  --colours-grey-900: rgba(16, 24, 40, 1);     /* #101828 */
 
-  /* Display M — 36px / 44px */
-  --font-size-display-m:         36px;
-  --line-height-display-m:       44px;
+  /* Red (errors / destructive) */
+  --colours-red-100: rgba(254, 228, 226, 1);
+  --colours-red-500: rgba(240, 68, 56, 1);
+  --colours-red-600: rgba(217, 45, 32, 1);
+  --colours-red-700: rgba(180, 35, 24, 1);
 
-  /* Display S — 30px / 38px */
-  --font-size-display-s:         30px;
-  --line-height-display-s:       38px;
+  /* Neutrals */
+  --white: rgba(255, 255, 255, 1);
+  --black: rgba(0, 0, 0, 1);
 
-  /* Display XS — 24px / 32px */
-  --font-size-display-xs:        24px;
-  --line-height-display-xs:      32px;
-
-  /* Text XL — 60px / 72px */
-  --font-size-text-xl:           60px;
-  --line-height-text-xl:         72px;
-
-  /* Text L — 18px / 28px */
-  --font-size-text-l:            18px;
-  --line-height-text-l:          28px;
-
-  /* Text M — 16px / 24px */
-  --font-size-text-m:            16px;
-  --line-height-text-m:          24px;
-
-  /* Text S — 14px / 20px */
-  --font-size-text-s:            14px;
-  --line-height-text-s:          20px;
-}
+  
+  --gray-200: var(--colours-grey-200);
+  --gray-300: var(--colours-grey-300);
+  --gray-500: var(--colours-grey-500);
+  --gray-600: var(--colours-grey-600);
+  --gray-700: var(--colours-grey-700);
+  --gray-900: var(--colours-grey-900);
+  --colors-grays-white: var(--white);
+  --colors-grays-black: var(--black);
 
 
-/* ============================================
-   SPACING SCALE — base 4
-   ============================================ */
-:root {
+  /* ==========================================
+     SHADOWS
+     ========================================== */
+  --shadow-xs: 0px 1px 2px 0px rgba(10, 13, 18, 0.05);
+  --shadow-sm: 0px 1px 3px 0px rgba(10, 13, 18, 0.10),
+               0px 1px 2px -1px rgba(10, 13, 18, 0.10);
+  --shadow-lg: 0px 4px 6px -2px rgba(10, 13, 18, 0.03),
+               0px 12px 16px -4px rgba(10, 13, 18, 0.08);
+
+
+  /* ==========================================
+     TYPOGRAPHY — FAMILY
+     ========================================== */
+  --font-family: "Inter", Helvetica, -apple-system, sans-serif;
+
+  --font-weight-regular:  400;
+  --font-weight-medium:   500;
+  --font-weight-semibold: 600;
+  --font-weight-bold:     700;
+
+
+  /* ==========================================
+     TYPOGRAPHY — SIZE / LINE-HEIGHT / TRACKING
+     ========================================== */
+
+  /* Display 2XL — 72 / 90 */
+  --display-2xl-size:    72px;
+  --display-2xl-line:    90px;
+  --display-2xl-spacing: -1.44px;
+
+  /* Display XL — 60 / 72 */
+  --display-xl-size:     60px;
+  --display-xl-line:     72px;
+  --display-xl-spacing:  -1.2px;
+
+  /* Display L — 48 / 60 */
+  --display-l-size:      48px;
+  --display-l-line:      60px;
+  --display-l-spacing:   -0.96px;
+
+  /* Display M — 36 / 44 */
+  --display-m-size:      36px;
+  --display-m-line:      44px;
+  --display-m-spacing:   -0.72px;
+
+  /* Display S — 30 / 38 */
+  --display-s-size:      30px;
+  --display-s-line:      38px;
+  --display-s-spacing:   0px;
+
+  /* Display XS — 24 / 32  (Anima exported 60/72 here by mistake) */
+  --display-xs-size:     24px;
+  --display-xs-line:     32px;
+  --display-xs-spacing:  0px;
+
+  /* Text XL — 20 / 30  (Anima's text-XL-bold said 60/72 by mistake) */
+  --text-xl-size:        20px;
+  --text-xl-line:        30px;
+  --text-xl-spacing:     0px;
+
+  /* Text L — 18 / 28 */
+  --text-l-size:         18px;
+  --text-l-line:         28px;
+  --text-l-spacing:      0px;
+
+  /* Text M — 16 / 24 */
+  --text-m-size:         16px;
+  --text-m-line:         24px;
+  --text-m-spacing:      0px;
+
+  /* Text S — 14 / 20 */
+  --text-s-size:         14px;
+  --text-s-line:         20px;
+  --text-s-spacing:      0px;
+
+  /* Text XS — 12 / 18  (Anima exported 60/72 here by mistake) */
+  --text-xs-size:        12px;
+  --text-xs-line:        18px;
+  --text-xs-spacing:     0px;
+
+
+  /* ==========================================
+     SPACING — base 4, matches Figma usage
+     ========================================== */
   --space-1:   4px;
   --space-2:   8px;
   --space-3:   12px;
@@ -109,111 +148,164 @@
   --space-20:  80px;
   --space-24:  96px;
   --space-32:  128px;
-}
 
 
-/* ============================================
-   BORDER RADIUS SCALE — base 4
-   ============================================ */
-:root {
-  --radius-sm:   4px;
-  --radius-md:   8px;
-  --radius-lg:   12px;
-  --radius-xl:   16px;
-  --radius-2xl:  24px;
+  /* ==========================================
+     RADIUS
+     ========================================== */
+  --radius-xs:   5px;    /* product card */
+  --radius-sm:   6px;    /* nav items */
+  --radius-md:   8px;    /* buttons, inputs, images */
+  --radius-lg:   10px;   /* spec panel */
+  --radius-xl:   16px;   /* review card, collections panel */
   --radius-full: 9999px;
-}
 
 
-/* ============================================
-   SEMANTIC ALIASES
-   Map tokens to their purpose so components
-   stay meaningful and easy to read
-   ============================================ */
-:root {
-  /* Buttons */
-  --btn-primary-bg:          var(--color-primary);
-  --btn-primary-bg-hover:    var(--color-primary-dark);
-  --btn-primary-text:        var(--color-text-inverse);
+  /* ==========================================
+     LAYOUT
+     ========================================== */
+  --page-width:      1440px;
+  --container-width: 1280px;
+  --container-pad:   var(--space-8);   /* 32px */
+  --header-height:   80px;
 
-  --btn-cart-bg:             var(--color-primary-dark);
-  --btn-cart-text:           var(--color-text-inverse);
 
-  /* Product Cards */
-  --card-title-color:        var(--color-text-dark);
-  --card-type-color:         var(--color-text-muted);
-  --card-price-color:        var(--color-primary);
+  /* ==========================================
+     SEMANTIC ALIASES
+     Components reference these, not raw scale
+     ========================================== */
 
-  /* Hero */
-  --hero-heading-color:      var(--color-text-inverse);
+  /* Text */
+  --color-heading:      var(--colours-grey-900);
+  --color-body:         var(--colours-grey-600);
+  --color-muted:        var(--colours-grey-500);
+  --color-inverse:      var(--white);
 
-  /* Headings and Subheadings */
-  --heading-color:           var(--color-text-dark);
-  --subheading-color:        var(--color-text-dark);
+  /* Surfaces */
+  --color-bg:           var(--white);
+  --color-bg-subtle:    var(--colours-grey-100);
+  --color-bg-footer:    var(--colours-grey-200);
+  --color-border:       var(--colours-grey-300);
+  --color-border-soft:  var(--colours-grey-200);
+
+  /* Brand */
+  --color-primary:      var(--colours-blue-700);   /* CTAs, prices, subheadings */
+  --color-primary-dark: var(--colours-blue-800);   /* Add to Cart */
+  --color-accent-soft:  var(--colours-blue-100);   /* feature icon backgrounds */
+
+  /* Component-level */
+  --btn-primary-bg:     var(--color-primary);
+  --btn-cart-bg:        var(--color-primary-dark);
+  --btn-text:           var(--color-inverse);
+
+  --card-title-color:   var(--colours-grey-900);
+  --card-type-color:    var(--colours-grey-600);
+  --card-price-color:   var(--colours-blue-700);
 }
 
 
 /* ============================================
    TYPOGRAPHY UTILITY CLASSES
-   Use these directly in your Liquid/HTML
+   Optional — use directly in Liquid markup
+   e.g. <h2 class="t-display-m-bold">
    ============================================ */
 
-/* Display 2XL */
-.text-display-2xl-regular   { font-family: var(--font-heading); font-size: var(--font-size-display-2xl); line-height: var(--line-height-display-2xl); font-weight: var(--font-weight-regular); }
-.text-display-2xl-medium    { font-family: var(--font-heading); font-size: var(--font-size-display-2xl); line-height: var(--line-height-display-2xl); font-weight: var(--font-weight-medium); }
-.text-display-2xl-semibold  { font-family: var(--font-heading); font-size: var(--font-size-display-2xl); line-height: var(--line-height-display-2xl); font-weight: var(--font-weight-semibold); }
-.text-display-2xl-bold      { font-family: var(--font-heading); font-size: var(--font-size-display-2xl); line-height: var(--line-height-display-2xl); font-weight: var(--font-weight-bold); }
+.t-display-2xl-bold,
+.t-display-2xl-semibold,
+.t-display-2xl-medium,
+.t-display-2xl-regular {
+  font-size: var(--display-2xl-size);
+  line-height: var(--display-2xl-line);
+  letter-spacing: var(--display-2xl-spacing);
+}
 
-/* Display XL */
-.text-display-xl-regular    { font-family: var(--font-heading); font-size: var(--font-size-display-xl); line-height: var(--line-height-display-xl); font-weight: var(--font-weight-regular); }
-.text-display-xl-medium     { font-family: var(--font-heading); font-size: var(--font-size-display-xl); line-height: var(--line-height-display-xl); font-weight: var(--font-weight-medium); }
-.text-display-xl-semibold   { font-family: var(--font-heading); font-size: var(--font-size-display-xl); line-height: var(--line-height-display-xl); font-weight: var(--font-weight-semibold); }
-.text-display-xl-bold       { font-family: var(--font-heading); font-size: var(--font-size-display-xl); line-height: var(--line-height-display-xl); font-weight: var(--font-weight-bold); }
+.t-display-xl-bold,
+.t-display-xl-semibold,
+.t-display-xl-medium,
+.t-display-xl-regular {
+  font-size: var(--display-xl-size);
+  line-height: var(--display-xl-line);
+  letter-spacing: var(--display-xl-spacing);
+}
 
-/* Display L */
-.text-display-l-regular     { font-family: var(--font-heading); font-size: var(--font-size-display-l); line-height: var(--line-height-display-l); font-weight: var(--font-weight-regular); }
-.text-display-l-medium      { font-family: var(--font-heading); font-size: var(--font-size-display-l); line-height: var(--line-height-display-l); font-weight: var(--font-weight-medium); }
-.text-display-l-semibold    { font-family: var(--font-heading); font-size: var(--font-size-display-l); line-height: var(--line-height-display-l); font-weight: var(--font-weight-semibold); }
-.text-display-l-bold        { font-family: var(--font-heading); font-size: var(--font-size-display-l); line-height: var(--line-height-display-l); font-weight: var(--font-weight-bold); }
+.t-display-l-bold,
+.t-display-l-semibold,
+.t-display-l-medium,
+.t-display-l-regular {
+  font-size: var(--display-l-size);
+  line-height: var(--display-l-line);
+  letter-spacing: var(--display-l-spacing);
+}
 
-/* Display M */
-.text-display-m-regular     { font-family: var(--font-heading); font-size: var(--font-size-display-m); line-height: var(--line-height-display-m); font-weight: var(--font-weight-regular); }
-.text-display-m-medium      { font-family: var(--font-heading); font-size: var(--font-size-display-m); line-height: var(--line-height-display-m); font-weight: var(--font-weight-medium); }
-.text-display-m-semibold    { font-family: var(--font-heading); font-size: var(--font-size-display-m); line-height: var(--line-height-display-m); font-weight: var(--font-weight-semibold); }
-.text-display-m-bold        { font-family: var(--font-heading); font-size: var(--font-size-display-m); line-height: var(--line-height-display-m); font-weight: var(--font-weight-bold); }
+.t-display-m-bold,
+.t-display-m-semibold,
+.t-display-m-medium,
+.t-display-m-regular {
+  font-size: var(--display-m-size);
+  line-height: var(--display-m-line);
+  letter-spacing: var(--display-m-spacing);
+}
 
-/* Display S */
-.text-display-s-regular     { font-family: var(--font-heading); font-size: var(--font-size-display-s); line-height: var(--line-height-display-s); font-weight: var(--font-weight-regular); }
-.text-display-s-medium      { font-family: var(--font-heading); font-size: var(--font-size-display-s); line-height: var(--line-height-display-s); font-weight: var(--font-weight-medium); }
-.text-display-s-semibold    { font-family: var(--font-heading); font-size: var(--font-size-display-s); line-height: var(--line-height-display-s); font-weight: var(--font-weight-semibold); }
-.text-display-s-bold        { font-family: var(--font-heading); font-size: var(--font-size-display-s); line-height: var(--line-height-display-s); font-weight: var(--font-weight-bold); }
+.t-display-s-bold,
+.t-display-s-semibold,
+.t-display-s-medium,
+.t-display-s-regular {
+  font-size: var(--display-s-size);
+  line-height: var(--display-s-line);
+  letter-spacing: var(--display-s-spacing);
+}
 
-/* Display XS */
-.text-display-xs-regular    { font-family: var(--font-heading); font-size: var(--font-size-display-xs); line-height: var(--line-height-display-xs); font-weight: var(--font-weight-regular); }
-.text-display-xs-medium     { font-family: var(--font-heading); font-size: var(--font-size-display-xs); line-height: var(--line-height-display-xs); font-weight: var(--font-weight-medium); }
-.text-display-xs-semibold   { font-family: var(--font-heading); font-size: var(--font-size-display-xs); line-height: var(--line-height-display-xs); font-weight: var(--font-weight-semibold); }
-.text-display-xs-bold       { font-family: var(--font-heading); font-size: var(--font-size-display-xs); line-height: var(--line-height-display-xs); font-weight: var(--font-weight-bold); }
+.t-display-xs-bold,
+.t-display-xs-semibold,
+.t-display-xs-medium,
+.t-display-xs-regular {
+  font-size: var(--display-xs-size);
+  line-height: var(--display-xs-line);
+  letter-spacing: var(--display-xs-spacing);
+}
 
-/* Text XL */
-.text-xl-regular            { font-family: var(--font-body); font-size: var(--font-size-text-xl); line-height: var(--line-height-text-xl); font-weight: var(--font-weight-regular); }
-.text-xl-medium             { font-family: var(--font-body); font-size: var(--font-size-text-xl); line-height: var(--line-height-text-xl); font-weight: var(--font-weight-medium); }
-.text-xl-semibold           { font-family: var(--font-body); font-size: var(--font-size-text-xl); line-height: var(--line-height-text-xl); font-weight: var(--font-weight-semibold); }
-.text-xl-bold               { font-family: var(--font-body); font-size: var(--font-size-text-xl); line-height: var(--line-height-text-xl); font-weight: var(--font-weight-bold); }
+.t-text-xl-bold,
+.t-text-xl-semibold,
+.t-text-xl-medium,
+.t-text-xl-regular {
+  font-size: var(--text-xl-size);
+  line-height: var(--text-xl-line);
+}
 
-/* Text L */
-.text-l-regular             { font-family: var(--font-body); font-size: var(--font-size-text-l); line-height: var(--line-height-text-l); font-weight: var(--font-weight-regular); }
-.text-l-medium              { font-family: var(--font-body); font-size: var(--font-size-text-l); line-height: var(--line-height-text-l); font-weight: var(--font-weight-medium); }
-.text-l-semibold            { font-family: var(--font-body); font-size: var(--font-size-text-l); line-height: var(--line-height-text-l); font-weight: var(--font-weight-semibold); }
-.text-l-bold                { font-family: var(--font-body); font-size: var(--font-size-text-l); line-height: var(--line-height-text-l); font-weight: var(--font-weight-bold); }
+.t-text-l-bold,
+.t-text-l-semibold,
+.t-text-l-medium,
+.t-text-l-regular {
+  font-size: var(--text-l-size);
+  line-height: var(--text-l-line);
+}
 
-/* Text M */
-.text-m-regular             { font-family: var(--font-body); font-size: var(--font-size-text-m); line-height: var(--line-height-text-m); font-weight: var(--font-weight-regular); }
-.text-m-medium              { font-family: var(--font-body); font-size: var(--font-size-text-m); line-height: var(--line-height-text-m); font-weight: var(--font-weight-medium); }
-.text-m-semibold            { font-family: var(--font-body); font-size: var(--font-size-text-m); line-height: var(--line-height-text-m); font-weight: var(--font-weight-semibold); }
-.text-m-bold                { font-family: var(--font-body); font-size: var(--font-size-text-m); line-height: var(--line-height-text-m); font-weight: var(--font-weight-bold); }
+.t-text-m-bold,
+.t-text-m-semibold,
+.t-text-m-medium,
+.t-text-m-regular {
+  font-size: var(--text-m-size);
+  line-height: var(--text-m-line);
+}
 
-/* Text S */
-.text-s-regular             { font-family: var(--font-body); font-size: var(--font-size-text-s); line-height: var(--line-height-text-s); font-weight: var(--font-weight-regular); }
-.text-s-medium              { font-family: var(--font-body); font-size: var(--font-size-text-s); line-height: var(--line-height-text-s); font-weight: var(--font-weight-medium); }
-.text-s-semibold            { font-family: var(--font-body); font-size: var(--font-size-text-s); line-height: var(--line-height-text-s); font-weight: var(--font-weight-semibold); }
-.text-s-bold                { font-family: var(--font-body); font-size: var(--font-size-text-s); line-height: var(--line-height-text-s); font-weight: var(--font-weight-bold); }
+.t-text-s-bold,
+.t-text-s-semibold,
+.t-text-s-medium,
+.t-text-s-regular {
+  font-size: var(--text-s-size);
+  line-height: var(--text-s-line);
+}
+
+.t-text-xs-bold,
+.t-text-xs-semibold,
+.t-text-xs-medium,
+.t-text-xs-regular {
+  font-size: var(--text-xs-size);
+  line-height: var(--text-xs-line);
+}
+
+/* Weight modifiers */
+[class*="-regular"]  { font-weight: var(--font-weight-regular); }
+[class*="-medium"]   { font-weight: var(--font-weight-medium); }
+[class*="-semibold"] { font-weight: var(--font-weight-semibold); }
+[class*="-bold"]     { font-weight: var(--font-weight-bold); }
